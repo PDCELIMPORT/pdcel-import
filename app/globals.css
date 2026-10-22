@@ -41,7 +41,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}
 .card{background:#1c1c1c;border:1px solid #2a2a2a;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;animation:up .5s ease both;transition:transform .2s,border-color .2s,box-shadow .2s}
 .card:hover{transform:translateY(-4px);border-color:#f97316;box-shadow:0 14px 34px rgba(249,115,22,.18)}
 .foto{position:relative;display:block;width:100%;border:0;background:#fff;padding:0;overflow:hidden}
-.foto img,.semfoto{width:100%;aspect-ratio:1;object-fit:cover;display:grid;place-items:center;font-size:48px;background:#f3f3f3;color:#141414;transition:transform .4s}
+.foto img,.semfoto{width:100%;aspect-ratio:1;object-fit:contain;display:grid;place-items:center;font-size:48px;background:#f3f3f3;color:#141414;transition:transform .4s}
 .card:hover .foto img{transform:scale(1.05)}
 .t-medio .foto img,.t-medio .semfoto{aspect-ratio:16/10}
 .badge{position:absolute;top:10px;left:10px;padding:5px 11px;border-radius:999px;font-size:.72rem;font-weight:800;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.3)}
@@ -85,5 +85,5 @@ footer a{color:#25d366;font-weight:700}
 .adm button{padding:10px 14px;border-radius:8px;border:0;background:#f97316;color:#fff;font-weight:700;cursor:pointer}
 .adm button.sec{background:#333}.adm button.del{background:#b91c1c}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .item{display:flex;gap:12px;align-items:center;background:#1f1f1f;border:1px solid #333;border-radius:10px;padding:10px}
-.item img{width:56px;height:56px;object-fit:cover;border-radius:8px}.item .n{flex:1}
+.item img{width:56px;height:56px;object-fit:contain;background:#fff;border-radius:8px}.item .n{flex:1}
 .err{color:#f87171}
