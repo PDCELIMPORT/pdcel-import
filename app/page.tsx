@@ -24,8 +24,8 @@ export default function Home() {
                 <p className="pag">💳 {p.pagamento}</p>
                 {ok ? (
                   <a className="btn" target="_blank" rel="noopener"
-                    href={zap(`Olá! Tenho interesse no produto: ${p.nome} (${brl(p.preco)}). Ainda está disponível?`)}>
-                    Quero este! Chamar no WhatsApp
+                    href={zap(`Olá, Pedro! Tenho interesse no produto: ${p.nome} (${brl(p.preco)}). Ainda está disponível?`)}>
+                    Quero este! Falar com o Pedro
                   </a>
                 ) : <span className="btn off">Esgotado</span>}
               </div>
@@ -33,7 +33,7 @@ export default function Home() {
           );
         })}
       </section>
-      <a className="flutuante" target="_blank" rel="noopener" href={zap(`Olá! Vi a página da ${LOJA.nome} e quero mais informações.`)}>💬</a>
+      <a className="flutuante" target="_blank" rel="noopener" href={zap(`Olá, Pedro! Vi a página da ${LOJA.nome} e quero mais informações.`)}>💬</a>
       <footer>© {LOJA.nome}</footer>
     </main>
   );
