@@ -1,0 +1,11 @@
+*{box-sizing:border-box;margin:0}body{font-family:system-ui,sans-serif;background:#f1f5f9;color:#0f172a}
+.topo{background:#0f172a;color:#fff;padding:28px 16px;text-align:center}.topo h1{font-size:1.8rem}.topo p{opacity:.8;margin-top:6px}
+.grade{display:grid;gap:16px;padding:16px;max-width:1100px;margin:auto;grid-template-columns:1fr}
+@media(min-width:640px){.grade{grid-template-columns:repeat(2,1fr)}}@media(min-width:960px){.grade{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px #0001;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover}.info{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.info h2{font-size:1.1rem}.preco{font-size:1.5rem;font-weight:800;color:#16a34a}.info ul{padding-left:18px;font-size:.9rem;color:#334155}
+.pag{font-size:.85rem;background:#f8fafc;padding:8px;border-radius:8px}
+.btn{margin-top:auto;display:block;text-align:center;background:#25d366;color:#fff;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+.btn.off{background:#94a3b8}.flutuante{position:fixed;right:16px;bottom:16px;background:#25d366;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;text-decoration:none;box-shadow:0 4px 12px #0003}
+footer{text-align:center;padding:24px;color:#64748b;font-size:.85rem}
