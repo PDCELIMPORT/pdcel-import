@@ -15,6 +15,15 @@ export default function Admin() {
   const [f, setF] = useState<Form>(vazio);
   const [arquivo, setArquivo] = useState<File | null>(null);
   const [busy, setBusy] = useState(false);
+  const [ns1, setNs1] = useState(''); const [ns2, setNs2] = useState(''); const [nsMsg, setNsMsg] = useState<{ ok: boolean; t: string } | null>(null);
+  async function trocarSenha(e: React.FormEvent) {
+    e.preventDefault(); setNsMsg(null);
+    if (ns1.length < 8) return setNsMsg({ ok: false, t: 'A senha precisa ter pelo menos 8 caracteres.' });
+    if (ns1 !== ns2) return setNsMsg({ ok: false, t: 'As senhas não conferem.' });
+    const { error } = await supabase.auth.updateUser({ password: ns1 });
+    if (error) setNsMsg({ ok: false, t: 'Erro ao alterar senha: ' + error.message });
+    else { setNsMsg({ ok: true, t: 'Senha alterada com sucesso!' }); setNs1(''); setNs2(''); }
+  }
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSess(data.session));
@@ -124,6 +133,14 @@ export default function Admin() {
         <textarea rows={2} value={padrao} onChange={(e) => setPadrao(e.target.value)} />
         <button type="button" onClick={salvarPadrao}>Salvar padrão</button>
       </div>
+
+      <form className="box" onSubmit={trocarSenha}>
+        <h3>Alterar senha</h3>
+        <input type="password" placeholder="Nova senha (mín. 8 caracteres)" autoComplete="new-password" value={ns1} onChange={(e) => setNs1(e.target.value)} required />
+        <input type="password" placeholder="Confirmar nova senha" autoComplete="new-password" value={ns2} onChange={(e) => setNs2(e.target.value)} required />
+        {nsMsg && <p className={nsMsg.ok ? '' : 'err'} style={nsMsg.ok ? { color: '#4ade80' } : undefined}>{nsMsg.t}</p>}
+        <button>Alterar senha</button>
+      </form>
 
       <h3>Produtos ({lista.length})</h3>
       {lista.map((p, i) => (
