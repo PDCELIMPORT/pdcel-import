@@ -1,3 +1,8 @@
 node_modules
 .next
 out
+node_modules
+.next
+out
+ADMIN_CREDENTIALS.txt
+.env*
