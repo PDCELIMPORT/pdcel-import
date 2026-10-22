@@ -3,7 +3,9 @@ import { LOJA } from '@/data/config';
 import { supabase, Produto } from '@/data/supabase';
 import Logo from './Logo';
 import Vitrine from './_c/Vitrine';
-export const revalidate = 30;
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+export const fetchCache = 'force-no-store';
 const brl = (v: number) => Number(v).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 const zap = (msg: string) => `https://wa.me/${LOJA.whatsapp}?text=${encodeURIComponent(msg)}`;
 
